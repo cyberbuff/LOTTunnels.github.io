@@ -9,7 +9,7 @@ Commands:
     Usecase: Establishes an encrypted reverse SSH channel from the compromised host to attacker-controlled infrastructure.
     Category: Access
     Privileges: User
-    OperatingSystem: Windows
+    OperatingSystem: Linux
 Custom_Domain_Supported: True
 Detection:
   - Command: Execution of the reported ReverseSSH or AquaTunnel binary with SSH reverse-forward or C2 configuration arguments.
