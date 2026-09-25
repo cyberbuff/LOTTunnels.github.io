@@ -18,14 +18,14 @@ Commands:
     Privileges: User
     OperatingSystem: Windows, Linux, MacOS, ARM-Linux
 
-  - Command: "ew -s rssocks -d <HOST_A_IP> -e 8888"
+  - Command: "ew -s rssocks -d $HOST_A_IP -e 8888"
     Description: Starts a SOCKS v5 server on the internal host and transfers its traffic to port 8888 on the public EarthWorm endpoint, completing the reverse SOCKS path.
     Usecase: Pivoting through a host that cannot accept inbound connections.
     Category: Access
     Privileges: User
     OperatingSystem: Windows, Linux, MacOS, ARM-Linux
 
-  - Command: "ew -s lcx_slave -d <HOST_A_IP> -e 8888 -f <HOST_B_IP> -g 9999"
+  - Command: "ew -s lcx_slave -d $HOST_A_IP -e 8888 -f $HOST_B_IP -g 9999"
     Description: Runs the slave side of a documented multi-transfer chain, connecting to one EarthWorm hop and forwarding TCP traffic toward another hop.
     Usecase: Creating a multi-hop path to an internal TCP service such as SSH or RDP.
     Category: Access
