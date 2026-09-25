@@ -18,8 +18,8 @@ Commands:
     Privileges: User
     OperatingSystem: Windows, Linux, MacOS
 
-  - Command: "./iox proxy -r <REMOTE>:9999"
-    Description: Connects to a reverse SOCKS5 IOX endpoint on <REMOTE>:9999; use with the paired local command.
+  - Command: "./iox proxy -r $REMOTE_HOST:9999"
+    Description: Connects to a reverse SOCKS5 IOX endpoint on $REMOTE_HOST:9999; use with the paired local command.
     Usecase: Establishing the reverse-proxy leg of a paired SOCKS5 tunnel.
     Category: Access
     Privileges: User
@@ -32,21 +32,21 @@ Commands:
     Privileges: User
     OperatingSystem: Windows, Linux, MacOS
 
-  - Command: "./iox fwd -l *8888 -l 33890 -k <KEY>"
+  - Command: './iox fwd -l \*8888 -l 33890 -k $IOX_KEY'
     Description: Listens on encrypted local port 8888 and forwards traffic to local port 33890 using the supplied pre-shared key.
     Usecase: Creating an encrypted relay leg to an internal service such as RDP.
     Category: Access
     Privileges: User
     OperatingSystem: Windows, Linux, MacOS
 
-  - Command: "./iox fwd -l 1000 -r *127.0.0.1:1001 -k <KEY>"
+  - Command: './iox fwd -l 1000 -r \*127.0.0.1:1001 -k $IOX_KEY'
     Description: Forwards a local listener to an encrypted remote IOX endpoint as one stage of a chained relay.
     Usecase: Building a multihop encrypted relay through an intermediate host.
     Category: Access
     Privileges: User
     OperatingSystem: Windows, Linux, MacOS
 
-  - Command: "./iox fwd -l *8888 -l *9999 -k <KEY> -u"
+  - Command: './iox fwd -l \*8888 -l \*9999 -k $IOX_KEY -u'
     Description: Enables UDP forwarding between encrypted local ports 8888 and 9999 using the supplied pre-shared key.
     Usecase: Relaying UDP traffic through an encrypted IOX tunnel.
     Category: Access
