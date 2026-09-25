@@ -4,14 +4,14 @@ Description: Rsockstun is a self-hosted, Go-based reverse SOCKS5 tunneler with S
 Author: cyberbuff
 Created: 2026-09-24
 Commands:
-  - Command: "rsockstun -listen :8443 -socks 127.0.0.1:1080 -cert <CERT>"
+  - Command: "rsockstun -listen :8443 -socks 127.0.0.1:1080 -cert $CERT"
     Description: "Starts the self-hosted rsockstun server on port 8443, with a SOCKS listener on 127.0.0.1:1080 and the supplied certificate."
     Usecase: Standing up the operator-controlled tunnel endpoint and its reverse SOCKS listener.
     Category: Access
     Privileges: User
     OperatingSystem: Windows, Linux
 
-  - Command: "rsockstun -connect <SERVER_IP>:8443"
+  - Command: "rsockstun -connect $SERVER_IP:8443"
     Description: "Connects to the rsockstun server and establishes the reverse SOCKS tunnel. Optional flags include -proxy, -proxyauth, -pass, -recn, -rect, and -agentpassword for upstream proxying, authentication, and reconnection."
     Usecase: Maintaining a reverse SOCKS connection from a host to an operator-controlled server.
     Category: Access
