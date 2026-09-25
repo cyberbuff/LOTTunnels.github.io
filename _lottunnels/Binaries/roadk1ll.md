@@ -20,6 +20,5 @@ Detection:
   - Command: "Outbound WebSocket C2 to attacker-controlled infrastructure with proxy/pivot behavior, including operator-requested outbound TCP connections to internal targets."
 Resources:
   - Link: https://blackpointcyber.com/blog/roadk1ll-a-websocket-based-pivoting-implant
-  - Link: https://blackpointcyber.com/blog/one-click-to-kingdom-come-how-ninjaone-compromise-turned-one-msp-compromise-into-a-multi-customer-breach
   - Link: https://www.bleepingcomputer.com/news/security/new-roadk1ll-websocket-implant-used-to-pivot-on-breached-networks
 ---
